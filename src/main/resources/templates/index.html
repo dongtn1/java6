@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert=~{/common/menu.html}></div>
+
+Hello <span th:text="${message}"></span>
+
+Hello2 <span>[(${msg})]</span>
+
+<p>Show users</p>
+<!-- 	<ul th:object=${user}> -->
+<!-- 		<li>Name: <span th:text=${user.name}></span></li> -->
+<!-- 		<li>Email: <span th:text=*{email}></span></li> -->
+<!-- 		<li>Active: <span th:if=*{active}>Active</span></li> -->
+<!-- 	</ul> -->
+
+<ul th:each=item:${list} th:object="${item}">
+    <li>Name: <span th:text=*{name}></span></li>
+    <li>Email: <span th:text=*{email}></span></li>
+    <li>Active: <span th:if=*{active}>Active</span></li>
+</ul>
+
+</body>
+</html>
